@@ -307,7 +307,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"otp\": \"3333\"\r\n}",
+					"raw": "{\r\n    \"email\": \"emailsuccess@gmail.com\",\r\n    \"otp\": \"3333\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -332,7 +332,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"otp\": \"0000\"\r\n}",
+							"raw": "{\r\n    \"email\": \"emailsuccess@gmail.com\",\r\n    \"otp\": \"0000\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -371,7 +371,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 02 Feb 2023 04:42:38 GMT"
+							"value": "Thu, 02 Feb 2023 10:05:57 GMT"
 						},
 						{
 							"key": "Connection",
@@ -392,7 +392,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"otp\": \"1111\"\r\n}",
+							"raw": "{\r\n    \"email\": \"emailsuccess@gmail.com\",\r\n    \"otp\": \"1111\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -431,7 +431,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 02 Feb 2023 04:43:01 GMT"
+							"value": "Thu, 02 Feb 2023 10:06:09 GMT"
 						},
 						{
 							"key": "Connection",
@@ -452,7 +452,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"otp\": \"3333\"\r\n}",
+							"raw": "{\r\n    \"email\": \"emailsuccess@gmail.com\",\r\n    \"otp\": \"3333\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -491,7 +491,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 02 Feb 2023 04:43:16 GMT"
+							"value": "Thu, 02 Feb 2023 10:06:19 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1274,6 +1274,474 @@
 					"body": "{\n    \"status\": false,\n    \"error\": \"Error message\"\n}"
 				}
 			]
+		},
+		{
+			"name": "Balance Main",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/balance_main/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"balance_main",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Balance User 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/balance_main/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"balance_main",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-XeoAnIzs8jncoaYP8Jma8o6dvJY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 02 Feb 2023 06:22:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"balance\": 1000000\n    }\n}"
+				},
+				{
+					"name": "Success Balance Main User II",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/balance_main/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"balance_main",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-6ithy+uprwLLmC5HAaw3+UuU9IQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 02 Feb 2023 06:22:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"balance\": 2000000\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User Usaha",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user_usaha/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user_usaha",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Get User Usaha User I",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user_usaha/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_usaha",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-3+O2os0ISWLO1n1DfxcL6WOtaQU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 02 Feb 2023 06:23:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": []\n}"
+				},
+				{
+					"name": "Success Get User Usaha User II",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user_usaha/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_usaha",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "850"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"352-P4wq0s2yZB46OgfFKvdhrLsYRkk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 02 Feb 2023 08:05:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"page\": 1,\n        \"limit\": 5,\n        \"max\": 1,\n        \"total\": 4,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"nama_usaha\": \"Toko I\",\n                \"alamat_usaha\": \"Jl Gedung Senatama Senen Coto Makassar\",\n                \"balance\": 10000000,\n                \"status\": 1\n            },\n            {\n                \"id\": 2,\n                \"nama_usaha\": \"Toko II\",\n                \"alamat_usaha\": \"Jl Gedung Senatama Senen Coto Makassar II\",\n                \"balance\": 100000,\n                \"status\": 1\n            },\n            {\n                \"id\": 3,\n                \"nama_usaha\": \"Toko III\",\n                \"alamat_usaha\": \"Jl Gedung Senatama Senen Coto Makassar II\",\n                \"balance\": 100000,\n                \"status\": 0\n            },\n            {\n                \"id\": 4,\n                \"nama_usaha\": \"Toko IV\",\n                \"alamat_usaha\": \"Jl Gedung Senatama Senen Coto Makassar II\",\n                \"balance\": 100000,\n                \"status\": 2\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Success Get User Usaha with Pagination",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 1,\r\n    \"limit\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user_usaha/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_usaha",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "850"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"352-P4wq0s2yZB46OgfFKvdhrLsYRkk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 02 Feb 2023 08:04:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"page\": 1,\n        \"limit\": 5,\n        \"max\": 1,\n        \"total\": 4,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"nama_usaha\": \"Toko I\",\n                \"alamat_usaha\": \"Jl Gedung Senatama Senen Coto Makassar\",\n                \"balance\": 10000000,\n                \"status\": 1\n            },\n            {\n                \"id\": 2,\n                \"nama_usaha\": \"Toko II\",\n                \"alamat_usaha\": \"Jl Gedung Senatama Senen Coto Makassar II\",\n                \"balance\": 100000,\n                \"status\": 1\n            },\n            {\n                \"id\": 3,\n                \"nama_usaha\": \"Toko III\",\n                \"alamat_usaha\": \"Jl Gedung Senatama Senen Coto Makassar II\",\n                \"balance\": 100000,\n                \"status\": 0\n            },\n            {\n                \"id\": 4,\n                \"nama_usaha\": \"Toko IV\",\n                \"alamat_usaha\": \"Jl Gedung Senatama Senen Coto Makassar II\",\n                \"balance\": 100000,\n                \"status\": 2\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "KYB",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "owner_name",
+							"value": "owner name",
+							"type": "text"
+						},
+						{
+							"key": "nik",
+							"value": "1231231231231231",
+							"type": "text"
+						},
+						{
+							"key": "tempat_lahir",
+							"value": "Makassar",
+							"type": "text"
+						},
+						{
+							"key": "tanggal_lahir",
+							"value": "28-12-1994",
+							"type": "text"
+						},
+						{
+							"key": "pekerjaan_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "photo_ktp",
+							"type": "file",
+							"src": "/C:/Users/Fabio/OneDrive/Pictures/Screenshots/Screenshot (1199).png"
+						},
+						{
+							"key": "photo_selfie",
+							"type": "file",
+							"src": "/C:/Users/Fabio/OneDrive/Pictures/Screenshots/Screenshot (1199).png"
+						},
+						{
+							"key": "jenis_usaha",
+							"value": "1",
+							"description": "1 : perorangan, 2 : badan hukum",
+							"type": "text"
+						},
+						{
+							"key": "kategori_usaha",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "omset_from",
+							"value": "1000000",
+							"type": "text"
+						},
+						{
+							"key": "omset_to",
+							"value": "500000000",
+							"type": "text"
+						},
+						{
+							"key": "province_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "city_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "district_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "village_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "postal_code",
+							"value": "12312",
+							"type": "text"
+						},
+						{
+							"key": "alamat_usaha",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "website",
+							"value": "test.com",
+							"type": "text"
+						},
+						{
+							"key": "bank_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "account_name",
+							"value": "nama rekening",
+							"type": "text"
+						},
+						{
+							"key": "account_number",
+							"value": "123123123",
+							"type": "text"
+						},
+						{
+							"key": "merchant_email",
+							"value": "emailsuccesskyb@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "no_hp",
+							"value": "081123131223",
+							"type": "text"
+						},
+						{
+							"key": "photo_usaha",
+							"type": "file",
+							"src": "/C:/Users/Fabio/OneDrive/Pictures/Screenshots/Screenshot (1199).png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/request_kyb",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request_kyb"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

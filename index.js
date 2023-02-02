@@ -206,14 +206,14 @@ server.use(async (req, res, next) => {
           id: 3,
           nama_usaha: "Toko III",
           alamat_usaha: "Jl Gedung Senatama Senen Coto Makassar II",
-          balance: 100000,
+          balance: 0,
           status: 0
         },
         {
           id: 4,
           nama_usaha: "Toko IV",
           alamat_usaha: "Jl Gedung Senatama Senen Coto Makassar II",
-          balance: 100000,
+          balance: 0,
           status: 2
         }
       ]
