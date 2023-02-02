@@ -1,14 +1,24 @@
 const port = process.env.PORT || 3000;
 const crypto = require('crypto');
-const e = require('express');
 
 const jsonServer = require('json-server');
+const multer = require('multer');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const fs = require('fs').promises;
 const middlewares = jsonServer.defaults();
 
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage, limits: {
+  fileSize: 2 * 1024 * 1024
+} }).fields([
+  { name: 'photo_ktp', maxCount: 1 },
+  { name: 'photo_selfie', maxCount: 1 },
+  { name: 'photo_usaha', maxCount: 1 },
+]);
+
 server.use(jsonServer.bodyParser);
+server.use(upload);
 
 server.use(async (req, res, next) => {
   const body = req.body;
@@ -145,14 +155,80 @@ server.use(async (req, res, next) => {
       }
     }
 
-    if (req.url === '/balance') {
+    if (req.url === '/balance_main/1') {
       res.json({
         status: true,
         data: {
           balance: 1000000
         }
       });
+    } else if (req.url === '/balance_main/2') {
+      res.json({
+        status: true,
+        data: {
+          balance: 2000000
+        }
+      });
     }
+
+    if (req.url === '/request_kyb') {
+      if (body.merchant_email === 'emailsuccesskyb@gmail.com') {
+        res.json({ status: true });
+      } else {
+        res.json({ status: false, error: "Error message" });
+      }
+    }
+
+    if (req.url === '/user_usaha/1') {
+      res.send({
+        status: true,
+        data: []
+      });
+    } else if (req.url === '/user_usaha/2') {
+      const page = body.page || 1;
+      const limit = body.limit || 5;
+      const result = [
+        {
+          id: 1,
+          nama_usaha: "Toko I",
+          alamat_usaha: "Jl Gedung Senatama Senen Coto Makassar",
+          balance: 10000000,
+          status: 1
+        },
+        {
+          id: 2,
+          nama_usaha: "Toko II",
+          alamat_usaha: "Jl Gedung Senatama Senen Coto Makassar II",
+          balance: 100000,
+          status: 1
+        },
+        {
+          id: 3,
+          nama_usaha: "Toko III",
+          alamat_usaha: "Jl Gedung Senatama Senen Coto Makassar II",
+          balance: 100000,
+          status: 0
+        },
+        {
+          id: 4,
+          nama_usaha: "Toko IV",
+          alamat_usaha: "Jl Gedung Senatama Senen Coto Makassar II",
+          balance: 100000,
+          status: 2
+        }
+      ]
+      res.send({
+        status: true,
+        data: {
+          page: page,
+          limit: limit,
+          max: Math.ceil(result.length / limit),
+          total: result.length,
+          values: result.slice(page - 1, limit)
+        }
+      })
+    }
+
   } else{
     next();
   }
