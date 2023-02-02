@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"emailalala@gmail.com\",\r\n    \"password\": \"qweqwe123\",\r\n    \"confirmation_password\": \"qweqwe123\",\r\n    \"pin\": \"111111\",\r\n    \"confirmation_pin\": \"111111\"\r\n}",
+					"raw": "{\r\n    \"email\": \"emailkyb@gmail.com\",\r\n    \"password\": \"qweqwe123\",\r\n    \"confirmation_password\": \"qweqwe123\",\r\n    \"pin\": \"111111\",\r\n    \"confirmation_pin\": \"111111\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -514,7 +514,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"emailcaptcha@gmail.com\",\r\n    \"password\": \"qweqwe123\"\r\n}",
+					"raw": "{\r\n    \"email\": \"emailkyb@gmail.com\",\r\n    \"password\": \"qweqwe123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -533,7 +533,7 @@
 			},
 			"response": [
 				{
-					"name": "Success Signin",
+					"name": "Success Signin (User Active & Not KYB)",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
@@ -591,6 +591,66 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"email\": \"emailsuccess@gmail.com\",\n        \"token\": \"7tF+X2GKoUhbST+T9HhPthx31xSnw75jYS5jzYS+U6JeppgYtjBVeMwcGmu+FzsotZHK9TSWav+rW9QBd5xvF16dWDuLsK4UH5bVkfK7hl/fwFt+DSG3Nrzl/P9+yQrV8XzFVVO7yKh5P/eH2nZL1qI5fEScboGB7izZEWPcJQs=\"\n    }\n}"
+				},
+				{
+					"name": "Success Signin (User Active & Kyb Active)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"emailkyb@gmail.com\",\r\n    \"password\": \"qweqwe123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "311"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"137-xxbyERKRqRNQ53LzjG1f6jktv3E\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 02 Feb 2023 05:05:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 2,\n        \"email\": \"emailkyb@gmail.com\",\n        \"status\": 1,\n        \"status_kyb\": 1,\n        \"token\": \"WPXi5QweeDmhigI0I+Fnc7MDjvu0yqJKiY5+1XVwVaYKCj0/R6DVP/TSRXRri7CvbN6ZpR43IrpRDssRxGDrdLHxGPhh9luyDUY+oXuj00skxfRl6FnUgXhJz7lwOszkPwD7FT9khBZxyZ8w9NiSWSmHT3ID5oY6dRU8W92Tnmw=\"\n    }\n}"
 				},
 				{
 					"name": "Failed Signin",

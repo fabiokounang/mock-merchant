@@ -14,7 +14,7 @@ server.use(async (req, res, next) => {
   const body = req.body;
   if (req.method === "POST") {
     if (req.url === '/signup' || req.url === '/resend_otp_signup') {
-      if (body.email === 'emailsuccess@gmail.com') {
+      if (body.email === 'emailsuccess@gmail.com' || body.email === 'emailkyb@gmail.com') {
         res.json({
           status: true,
           data: {
@@ -61,6 +61,21 @@ server.use(async (req, res, next) => {
           data: {
             id: d.id,
             email: d.email,
+            status: 1,
+            status_kyb: 0,
+            token: crypto.randomBytes(128).toString('base64')
+          }
+        });
+      } else if (body.email === 'emailkyb@gmail.com') {
+        const file = JSON.parse(await fs.readFile('db.json'));
+        const d = file.signup.find(val => val.email === body.email);
+        res.json({
+          status: true,
+          data: {
+            id: d.id,
+            email: d.email,
+            status: 1,
+            status_kyb: 1,
             token: crypto.randomBytes(128).toString('base64')
           }
         });
@@ -128,6 +143,15 @@ server.use(async (req, res, next) => {
           error: "Error message reset password"
         });
       }
+    }
+
+    if (req.url === '/balance') {
+      res.json({
+        status: true,
+        data: {
+          balance: 1000000
+        }
+      });
     }
   } else{
     next();
